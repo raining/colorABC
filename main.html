@@ -6,43 +6,35 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div id='color'></div>
-    <button id='secondBtn' class="element_step" onclick="location.reload();">Let's get on top!</button>
-    <form class="mainForm element_step">
+    <button id='secondBtn' class="element_step" onclick="location.reload();">Start again!</button><br />
+    <form id='mainForm' class="mainForm element_step">
         <label id='label' class="label element_step">Enter text:</label><br>
-        <textarea id='textarea' class="element_step"
+        <textarea id="textarea" class="element_step"
                 placeholder="Enter some text! There are no restrictions to text length!"
                 cols="100"
-                rows="10"></textarea><br>
+                rows="10">
+        </textarea><br>
         <button id='mainBtn' type="button"
                 onclick="
-                var str = document.getElementById('textarea').value;
+                    var str = document.getElementById('textarea').value;
+                    var cABC = new ColorABC(str);
+                    cABC.createABC(str, '');
+                ">Create your color ABC for every symbol!</button><br />
 
-                var cABC = new ColorABC(str);
+        <button id='mainBtn' type="button"
+                onclick="
+                    var str = document.getElementById('textarea').value;
+                    var cABC = new ColorABC(str);
+                    cABC.createABC(str, ' ');
+                ">Create your color ABC for every word!</button><br />
 
-                document.getElementById('textarea').style.display = 'none';
-                document.getElementById('label').style.display = 'none';
-                document.getElementById('mainBtn').style.display = 'none';
+        <button id='mainBtn' type="button"
+                onclick="
+                    var str = document.getElementById('textarea').value;
+                    var cABC = new ColorABC(str);
+                    cABC.createABC(str, '.');
+                ">Create your color ABC for every sentence!</button><br />
 
-                var arrayStr = str.split('');
-
-                for (var i in arrayStr) {
-
-                    var child = document.createElement('div');
-                    child.innerHTML = arrayStr[i];
-                    child.style.background = cABC.getColor();
-                    child.style.display = 'inline';
-
-                    child.style.padding = '0 8px';
-                    document.body.appendChild(child);
-                }
-
-//                document.getElementById('color').innerHTML = str;
-                document.getElementById('secondBtn').style.visibility = 'visible';
-
-//                cABC.createABC(str);
-
-                ">Create your color ABC!</button>
     </form>
 
     <script src="ColorABC.js"></script>
