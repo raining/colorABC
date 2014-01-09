@@ -12,7 +12,7 @@ ColorABC.prototype.getColor = function() {
 };
 
 
-//todo: think about effectiveness of this method (try another args, new technics etc)
+//todo: think about effectiveness of this method (try another args, new techniques etc)
 
 ColorABC.prototype.createABC = function(str, sym) {
     document.getElementById('mainForm').style.display = 'none';
