@@ -24,7 +24,7 @@ ColorABC.prototype.getColor = function() {
 
 
 
-ColorABC.prototype.createABC = function() {
+ColorABC.prototype.createABC = function(str) {
 
 };
 
