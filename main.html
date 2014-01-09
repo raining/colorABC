@@ -17,37 +17,27 @@
         <button id='mainBtn' type="button"
                 onclick="
                 var str = document.getElementById('textarea').value;
-                console.log(str);
 
                 var cABC = new ColorABC(str);
-                console.log(cABC);
 
                 document.getElementById('textarea').style.display = 'none';
                 document.getElementById('label').style.display = 'none';
                 document.getElementById('mainBtn').style.display = 'none';
 
-//                document.getElementById('color').style.background = cABC.getColor();
-                var arrayStr = str.split('.');
+                var arrayStr = str.split('');
 
                 for (var i in arrayStr) {
-//                    var d = document.getElementById('color');
-
-                    //<div id='item' style='background: color1;'>t</div>
-                    //<div id='item' style='background: color1;'>e</div>
-                    //<div id='item' style='background: color1;'>x</div>
-                    //<div id='item' style='background: color1;'>t</div>
 
                     var child = document.createElement('div');
                     child.innerHTML = arrayStr[i];
                     child.style.background = cABC.getColor();
                     child.style.display = 'inline';
 
-                    child.style.padding = '0 5px';
-                    child.style.margin = '55px 0';
-                    body.appendChild(child);
+                    child.style.padding = '0 8px';
+                    document.body.appendChild(child);
                 }
 
-                document.getElementById('color').innerHTML = str;
+//                document.getElementById('color').innerHTML = str;
                 document.getElementById('secondBtn').style.visibility = 'visible';
 
 //                cABC.createABC(str);
