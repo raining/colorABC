@@ -6,16 +6,33 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <div id='color'></div>
+    <button id='secondBtn' onclick="location.reload();">Let's get on top!</button>
     <form class="mainForm element_step">
-        <label class="label element_step">Enter text:</label><br>
-        <textarea class="element_step"
+        <label id='label' class="label element_step">Enter text:</label><br>
+        <textarea id='textarea' class="element_step"
                 placeholder="Enter some text! There are no restrictions to text length!"
                 cols="100"
-                rows="20"></textarea><br>
-        <button type="submit" onclick="
-        new ColorABC(document.getElementsByTagName('textarea').value).createABC()">Create your color ABC!</button>
+                rows="10"></textarea><br>
+        <button id='mainBtn' type="button"
+                onclick="
+                var str = document.getElementById('textarea').value;
+                console.log(str);
+
+                var cABC = new ColorABC(str);
+                console.log(cABC);
+
+                document.getElementById('textarea').style.visibility = 'hidden';
+                document.getElementById('label').style.visibility = 'hidden';
+                document.getElementById('mainBtn').style.visibility = 'hidden';
+
+                document.getElementById('color').style.background = cABC.getColor();
+                document.getElementById('color').innerHTML = str;
+                document.getElementById('secondBtn').style.visibility = 'visible';
+
+                ">Create your color ABC!</button>
     </form>
-    <div id="color">test</div>
+
     <script src="ColorABC.js"></script>
 </body>
 </html>
