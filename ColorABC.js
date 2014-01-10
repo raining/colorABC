@@ -6,9 +6,12 @@ function ColorABC(text) {
 //todo: fix method - somtetimes works incorrectly
 
 ColorABC.prototype.getColor = function() {
-
-    var color = Math.floor((Math.random() * 0xFFFFFF)).toString(16);
-    return '#' + color;
+    var color = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    var num = color + '';
+    while (num.length < 6) {
+        num += '0';
+    }
+    return '#' + num;
 };
 
 
@@ -20,12 +23,12 @@ ColorABC.prototype.createABC = function(str, sym) {
 
     var arrayStr = str.split(sym);
 
-    for (var i in arrayStr) {
-
+    for (var i = 0; i < arrayStr.length; i++) {
         var child = document.createElement('div');
-        child.innerHTML = arrayStr[i];
-        child.style.background = this.getColor();
+        var backgroundColor = this.getColor();
+        child.style.background = backgroundColor;
         child.style.display = 'inline';
+        child.innerHTML = arrayStr[i];
 
         child.style.padding = '0 8px';
         document.body.appendChild(child);
