@@ -18,7 +18,9 @@ ColorABC.prototype.getColor = function() {
 
 ColorABC.prototype.createABC = function(str, sym) {
     document.getElementById('mainForm').style.display = 'none';
-    document.getElementById('mainBtn').style.display = 'none';
+    document.getElementById('mainBtn1').style.display = 'none';
+    document.getElementById('mainBtn2').style.display = 'none';
+    document.getElementById('mainBtn3').style.display = 'none';
 
     var arrayStr = str.split(sym);
 
