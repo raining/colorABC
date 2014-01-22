@@ -16,23 +16,17 @@
         </textarea><br>
         <button id='mainBtn' type="button"
                 onclick="
-                    var str = document.getElementById('textarea').value;
-                    var cABC = new ColorABC(str);
-                    cABC.createABC(str, '');
+                      createABCSymbols();
                 ">Create your color ABC for every symbol!</button><br />
 
         <button id='mainBtn' type="button"
                 onclick="
-                    var str = document.getElementById('textarea').value;
-                    var cABC = new ColorABC(str);
-                    cABC.createABC(str, ' ');
+                      createABCWords();
                 ">Create your color ABC for every word!</button><br />
 
         <button id='mainBtn' type="button"
                 onclick="
-                    var str = document.getElementById('textarea').value;
-                    var cABC = new ColorABC(str);
-                    cABC.createABC(str, '.');
+                      createABCSentences();
                 ">Create your color ABC for every sentence!</button><br />
 
     </form>

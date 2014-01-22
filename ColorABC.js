@@ -1,5 +1,4 @@
-function ColorABC(text) {
-    this.text = text;
+function ColorABC() {
 };
 
 
@@ -36,3 +35,23 @@ ColorABC.prototype.createABC = function(str, sym) {
 
     document.getElementById('secondBtn').style.visibility = 'visible';
 };
+
+function createABCSymbols() {
+    (function() {
+        var str = document.getElementById('textarea').value;
+        var cABC = new ColorABC();
+        cABC.createABC(str, '');
+    }());
+}
+
+function createABCWords() {
+    var str = document.getElementById('textarea').value;
+    var cABC = new ColorABC(str);
+    cABC.createABC(str, ' ');
+}
+
+function createABCSentences() {
+    var str = document.getElementById('textarea').value;
+    var cABC = new ColorABC(str);
+    cABC.createABC(str, '.');
+}
