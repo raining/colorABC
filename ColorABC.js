@@ -38,28 +38,27 @@ ColorABC.prototype.createABC = function(str, sym) {
     document.getElementById('secondBtn').style.visibility = 'visible';
 };
 
-function createABCSymbols() {
+
+document.getElementById('mainBtn1').onclick = function () {
     (function() {
         var str = document.getElementById('textarea').value;
         var cABC = new ColorABC();
         cABC.createABC(str, '');
     }());
-}
+};
 
-function createABCWords() {
+document.getElementById('mainBtn2').onclick = function() {
     (function() {
         var str = document.getElementById('textarea').value;
         var cABC = new ColorABC(str);
         cABC.createABC(str, ' ');
     }());
+};
 
-}
-
-function createABCSentences() {
+document.getElementById('mainBtn3').onclick = function() {
     (function() {
         var str = document.getElementById('textarea').value;
         var cABC = new ColorABC(str);
         cABC.createABC(str, '.');
     }());
-
-}
+};
