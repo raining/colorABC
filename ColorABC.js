@@ -45,13 +45,19 @@ function createABCSymbols() {
 }
 
 function createABCWords() {
-    var str = document.getElementById('textarea').value;
-    var cABC = new ColorABC(str);
-    cABC.createABC(str, ' ');
+    (function() {
+        var str = document.getElementById('textarea').value;
+        var cABC = new ColorABC(str);
+        cABC.createABC(str, ' ');
+    }());
+
 }
 
 function createABCSentences() {
-    var str = document.getElementById('textarea').value;
-    var cABC = new ColorABC(str);
-    cABC.createABC(str, '.');
+    (function() {
+        var str = document.getElementById('textarea').value;
+        var cABC = new ColorABC(str);
+        cABC.createABC(str, '.');
+    }());
+
 }
